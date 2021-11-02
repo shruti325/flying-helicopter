@@ -1,0 +1,91 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(skybg.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cockpit {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px 40px 50px 50pc;
+    background-color: rgb(255, 255, 79);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.cockpit::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 180px;
+    height: 180px;
+    border-radius: 40px;
+    background-color: #302e37;
+    bottom: 25px;
+    right: 24px;
+}
+
+.cockpit::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 180px;
+    height: 180px;
+    bottom: 60px;
+    right: 60px;
+    border-radius: 40px;
+    background-color: black;
+}
+
+.head {
+    position: absolute;
+    bottom: 0.3px;
+    left: 130px;
+    width: 40px;
+    height: 25px;
+    background-color: #302e37;
+}
+
+.tail {
+    position: absolute;
+    top: 46px;
+    left: 200px;
+    border-top: 10px solid transparent;
+    border-bottom: 80px solid transparent;
+    border-left: 300px solid rgb(250, 250, 94);
+    height: 11px;
+}
+
+.fan {
+    width: 650px;
+    height: 650px;
+    border-radius: 350px;
+    position: absolute;
+    top: -340px;
+    right: -484px;
+    z-index: 2;
+    background-color: #a299ab;
+    overflow: hidden;
+    opacity: 0.2;
+    transform: scaleY(0.075);
+}
+
+.helicopter {
+    position: absolute;
+    top: 200px;
+    left: 600px;
+    transform: translate(400px, 300px);
+    animation: fly 5s infinite;
+}
+
+@keyframes fly {
+    0%, 100% {
+        transform: translate(0px, -50px) rotate(-15deg);
+    }
+    50% {
+        transform: translate(0px, 50px) rotate(-10deg);
+    }
+}
